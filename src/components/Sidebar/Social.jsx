@@ -10,7 +10,7 @@ import { ReactComponent as Telegram } from "../../assets/icons/icon_telegram.svg
 export default function Social() {
   return (
     <div className="social-row">
-      <Link href="https://t.me/starguru416" target="_blank">  
+      <Link href="" target="_blank">  
         <SvgIcon color="primary" viewBox="0 0 256 256" component={Twitter} />
       </Link>
 
@@ -18,11 +18,11 @@ export default function Social() {
         <SvgIcon color="primary" viewBox="0 0 256 256" component={Telegram} />
       </Link>
 
-      <Link href="https://t.me/starguru416" target="_blank">
+      <Link href="" target="_blank">
         <SvgIcon color="primary" viewBox="0 0 256 256" component={Reddit} />
       </Link>
 
-      <Link href="https://t.me/starguru416" target="_blank">
+      <Link href="" target="_blank">
         <SvgIcon color="primary" viewBox="0 0 256 256" component={Medium} />
       </Link>
 

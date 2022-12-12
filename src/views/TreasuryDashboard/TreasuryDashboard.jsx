@@ -136,10 +136,10 @@ function TreasuryDashboard() {
 
               <Box className="metric wsoprice">
                 <Typography variant="h6" color="textSecondary">
-                  wsTRP Price
+                  wsHAL Price
                   <InfoTooltip
                     message={
-                      "wsTRP = sTRP * index\n\nThe price of wsTRP is equal to the price of HAL multiplied by the current index"
+                      "wsHAL = sTRP * index\n\nThe price of wsHAL is equal to the price of HAL multiplied by the current index"
                     }
                   />
                 </Typography>
