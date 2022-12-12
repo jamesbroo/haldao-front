@@ -1,0 +1,23 @@
+
+First: deploy contracts like following sequence
+
+HAL.sol
+sHAL.sol
+staking.sol(13611415)
+staking helper
+staking warmup
+treasury
+BondingCalculator
+Dao(gnosis-safe.io) name: wallet
+RedeemHelper
+Distributor.sol
+BondDepository(USDC)  
+BondDepository(DAI)  
+BondDepository(HAL-USDC) 
+
+Second: deploy parameters are displayed on constructor name 
+If you are not sure, let me know
+
+
+
+
