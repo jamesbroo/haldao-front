@@ -167,7 +167,7 @@ export const calcBondDetails = createAsyncThunk(
     }
     // Calculate bonds purchased
     let purchased = await bond.getTreasuryBalance(networkID, provider);
-    if (bond.name == "usdc" || bond.name == "hal_usdc_lp") {
+    if (bond.name == "usdc" || bond.name == "hal_usdc_lp" || bond.name == "usdt") {
       bondPrice = bondPrice / Math.pow(10, 6);
       bondDiscount = bondDiscount / Math.pow(10, 12) - 1;
     } else {
