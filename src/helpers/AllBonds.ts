@@ -62,7 +62,7 @@ export const dai = new StableBond({
   bondContractABI: BondOhmDaiContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x78FE6740bAc8162b6AA6bE9c1beA81e059c13641",    
+      bondAddress: "0x6799E25f3cD112598df8914C41FB40e04B379D73",    
       reserveAddress: "0x6B175474E89094C44Da98b954EedeAC495271d0F", 
     },
     [NetworkID.Testnet]: {
@@ -80,7 +80,7 @@ export const usdt = new StableBond({
   bondContractABI: BondOhmDaiContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0xBEc3929C0ca03CF0B533f318b6B20C472D095dCF",    
+      bondAddress: "0x4aEe3804C718ab93ADc600fb50DACF6de3E98689",    
       reserveAddress: "0xdAC17F958D2ee523a2206206994597C13D831ec7", 
     },
     [NetworkID.Testnet]: {
@@ -99,7 +99,7 @@ export const usdc = new StableBond({
   bondContractABI: BondOhmDaiContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0xee0f610221DDB928fF278E4C1685ad9D7a96630D",    
+      bondAddress: "0x57b2Fe1174Ea4f9FF3EfE81c06cc83f1B2B5f889",    
       reserveAddress: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", 
     },
     [NetworkID.Testnet]: {
