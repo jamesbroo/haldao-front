@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import { addresses } from "../constants";
 import { IBaseAsyncThunk } from "../slices/interfaces";
-import { ohm_usdc } from "./AllBonds";
+import { ohm_dai } from "./AllBonds";
 
 const balanceOf = {
   inputs: [{ internalType: "address", name: "", type: "address" }],
@@ -52,11 +52,12 @@ const info = {
 export async function calcRunway(circulatingSupply: number, { networkID, provider }: IBaseAsyncThunk) {
   const reserves = [
     addresses[networkID].DAI_ADDRESS,
+    addresses[networkID].USDT_ADDRESS,
     addresses[networkID].USDC_ADDRESS,
     // eth.networkAddrs[networkID].reserveAddress,
   ];
   // const lps = [hec_usdc.networkAddrs[networkID].reserveAddress, ohm_dai.networkAddrs[networkID].reserveAddress];
-  const lps = [ohm_usdc.networkAddrs[networkID].reserveAddress];
+  const lps = [ohm_dai.networkAddrs[networkID].reserveAddress];
   // const wftmBondContract = new ethers.Contract(eth.networkAddrs[networkID].bondAddress, [assetPrice], provider);
   const bondCalContract = new ethers.Contract(
     addresses[networkID].BONDINGCALC_ADDRESS1 as string,

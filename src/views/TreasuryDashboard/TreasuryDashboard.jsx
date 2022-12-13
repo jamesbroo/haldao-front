@@ -139,7 +139,7 @@ function TreasuryDashboard() {
                   wsHAL Price
                   <InfoTooltip
                     message={
-                      "wsHAL = sTRP * index\n\nThe price of wsHAL is equal to the price of HAL multiplied by the current index"
+                      "wsHAL = sHAL * index\n\nThe price of wsHAL is equal to the price of HAL multiplied by the current index"
                     }
                   />
                 </Typography>
@@ -176,12 +176,12 @@ function TreasuryDashboard() {
                   Current Index
                   <InfoTooltip
                     message={
-                      "The current index tracks the amount of sTRP accumulated since the beginning of staking. Basically, how much sTRP one would have if they staked and held a single HAL from day 1."
+                      "The current index tracks the amount of sHAL accumulated since the beginning of staking. Basically, how much sHAL one would have if they staked and held a single HAL from day 1."
                     }
                   />
                 </Typography>
                 <Typography variant="h5">
-                  {currentIndex ? trim(currentIndex, 2) + " sTRP" : <Skeleton type="text" />}
+                  {currentIndex ? trim(currentIndex, 2) + " sHAL" : <Skeleton type="text" />}
                 </Typography>
               </Box>
               {/* <Box className="metric runway">
@@ -189,7 +189,7 @@ function TreasuryDashboard() {
                   Runway
                   <InfoTooltip
                     message={
-                      "Runway, is the number of days sTRP emissions can be sustained at a given rate. Lower APY = longer runway"
+                      "Runway, is the number of days sHAL emissions can be sustained at a given rate. Lower APY = longer runway"
                     }
                   />
                 </Typography>

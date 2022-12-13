@@ -4,6 +4,7 @@ import { addresses } from "src/constants";
 import { ReactComponent as DaiImg } from "src/assets/tokens/DAI.svg";
 import { ReactComponent as OhmDaiImg } from "src/assets/tokens/OHM-DAI.svg";
 import { ReactComponent as TRPBUSDImg } from "src/assets/tokens/TRP-BUSD.svg";
+import { ReactComponent as TRPDAIImg } from "src/assets/tokens/TRP-DAI.svg";
 import { ReactComponent as TRPUSDTImg } from "src/assets/tokens/TRP-USDT.svg";
 import { ReactComponent as BUSDImg } from "src/assets/tokens/BUSD.svg";
 import { ReactComponent as USDTImg } from "src/assets/tokens/USDT.svg";
@@ -53,24 +54,6 @@ import { getBondCalculator } from "src/helpers/BondCalculator";
 // TODO(zx): Further modularize by splitting up reserveAssets into vendor token definitions
 //   and include that in the definition of a bond
 
-export const usdc = new StableBond({
-  name: "usdc",
-  displayName: "USDC",
-  bondToken: "USDC",
-  bondIconSvg: USDCImg,
-  bondContractABI: BondOhmDaiContract,
-  networkAddrs: {
-    [NetworkID.Mainnet]: {
-      bondAddress: "0x0000000000000000000000000000000000000000",    // Dai Bond Depository address
-      reserveAddress: "0x6B175474E89094C44Da98b954EedeAC495271d0F", // Dai address
-    },
-    [NetworkID.Testnet]: {
-      bondAddress: "0x6f452D25d69370e85eD42eDeEC9a4567B32f4516",
-      reserveAddress: "0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C",
-    },
-  },
-});
-
 export const dai = new StableBond({
   name: "dai",
   displayName: "DAI",
@@ -79,8 +62,26 @@ export const dai = new StableBond({
   bondContractABI: BondOhmDaiContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x0000000000000000000000000000000000000000",    // Dai Bond Depository address
-      reserveAddress: "0x6B175474E89094C44Da98b954EedeAC495271d0F", // Dai address
+      bondAddress: "0x78FE6740bAc8162b6AA6bE9c1beA81e059c13641",    
+      reserveAddress: "0x6B175474E89094C44Da98b954EedeAC495271d0F", 
+    },
+    [NetworkID.Testnet]: {
+      bondAddress: "0x5cb8780d8a7F0F68312a9010CdA930AAef893d4d",
+      reserveAddress: "0xdc31Ee1784292379Fbb2964b3B9C4124D8F89C60",
+    },
+  },
+});
+
+export const usdt = new StableBond({
+  name: "usdt",
+  displayName: "USDT",
+  bondToken: "USDT",
+  bondIconSvg: USDTImg,
+  bondContractABI: BondOhmDaiContract,
+  networkAddrs: {
+    [NetworkID.Mainnet]: {
+      bondAddress: "0xBEc3929C0ca03CF0B533f318b6B20C472D095dCF",    
+      reserveAddress: "0xdAC17F958D2ee523a2206206994597C13D831ec7", 
     },
     [NetworkID.Testnet]: {
       bondAddress: "0x5cb8780d8a7F0F68312a9010CdA930AAef893d4d",
@@ -90,17 +91,35 @@ export const dai = new StableBond({
 });
 
 
-export const ohm_usdc = new LPBond({
-  name: "hal_usdc_lp",
-  displayName: "HAL-USDC LP",
+export const usdc = new StableBond({
+  name: "usdc",
+  displayName: "USDC",
   bondToken: "USDC",
-  bondIconSvg: TRPBUSDImg,
+  bondIconSvg: USDCImg,
+  bondContractABI: BondOhmDaiContract,
+  networkAddrs: {
+    [NetworkID.Mainnet]: {
+      bondAddress: "0xee0f610221DDB928fF278E4C1685ad9D7a96630D",    
+      reserveAddress: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", 
+    },
+    [NetworkID.Testnet]: {
+      bondAddress: "0x6f452D25d69370e85eD42eDeEC9a4567B32f4516",
+      reserveAddress: "0xD87Ba7A50B2E7E660f678A895E4B72E7CB4CCd9C",
+    },
+  },
+});
+
+export const ohm_dai = new LPBond({
+  name: "hal_dai_lp",
+  displayName: "HAL-DAI LP",
+  bondToken: "DAI",
+  bondIconSvg: TRPDAIImg,
   bondContractABI: BondOhmDaiContract,
   reserveContract: ReserveOhmDaiContract,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "0x0000000000000000000000000000000000000000",
-      reserveAddress: "0x0000000000000000000000000000000000000000",
+      bondAddress: "0x8be58D3502065532d5b0d21d41f0Cb00935C0593",
+      reserveAddress: "0x7E1D039e579FdA96101DF972abE475d47Bade764",
     },
     [NetworkID.Testnet]: {
       bondAddress: "0xc8b0B7d9Ec9021a29A63f0CB90fD8CBA147d2222",
@@ -108,7 +127,7 @@ export const ohm_usdc = new LPBond({
     },
   },
   lpUrl:
-    "https://goerli.etherscan.io/address/0xdeE74528651CD847f1123717E7A4E51E8e93C8Ed",
+    "https://etherscan.io/address/0x7E1D039e579FdA96101DF972abE475d47Bade764",
 });
 
 
@@ -500,7 +519,7 @@ export const ohm_usdc = new LPBond({
 // Is it a stableCoin bond? use `new StableBond`
 // Is it an LP Bond? use `new LPBond`
 // Add new bonds to this array!!
-export const allBonds = [usdc, dai, ohm_usdc];//mtn_wbnb, cake
+export const allBonds = [ dai, usdc, usdt, ohm_dai];//mtn_wbnb, cake
 export const allBondsMap = allBonds.reduce((prevVal, bond) => {
   return { ...prevVal, [bond.name]: bond };
 }, {});

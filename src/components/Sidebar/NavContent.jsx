@@ -27,7 +27,7 @@ function NavContent() {
   const address = useAddress();
   const { bonds } = useBonds();
   const { chainID } = useWeb3Context();
-  const USDCAddress = addresses[chainID].USDC_ADDRESS;
+  const DAIAddress = addresses[chainID].DAI_ADDRESS;
   const HALAddress = addresses[chainID].HEC_ADDRESS;
   
   const checkPage = useCallback((match, location, page) => {
@@ -121,7 +121,7 @@ function NavContent() {
                   ))}
                 </div>
               </div>
-              <Link href={`https://app.uniswap.org/#/swap?inputCurrency=${USDCAddress}&outputCurrency=${HALAddress}`} target="_blank" component={"a"}>
+              <Link href={`https://app.uniswap.org/#/swap?inputCurrency=${DAIAddress}&outputCurrency=${HALAddress}`} target="_blank" component={"a"}>
                 <Typography variant="h6">
                   <SvgIcon color="primary" viewBox="0 0 256 256" component={UniswapIcon} />
                   Get HAL without Discount (Uniswap)
@@ -165,7 +165,7 @@ function NavContent() {
                 </Typography>
               </Link>
 
-              <Link href={""} target="_blank" component={"a"}>
+              <Link href={"https://dexscreener.com/ethereum/0x7e1d039e579fda96101df972abe475d47bade764"} target="_blank" component={"a"}>
                 <Typography variant="h6">
                   <SvgIcon color="primary" viewBox="0 0 256 256" component={ChartsIcon} />
                   Charts

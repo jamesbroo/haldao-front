@@ -7,6 +7,8 @@ HAL-USDC: 0xdeE74528651CD847f1123717E7A4E51E8e93C8Ed
 
 HAL-DAI: 
 
+StakingManaer: 0x5aE9afE847A728e0bA854CA2f72527eCCceD3425
+
 -------------Deploying Address on Goerli Testnet-------------------------
 Owner Address(Cherie, Dusan)
 

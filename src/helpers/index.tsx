@@ -8,18 +8,17 @@ import { SvgIcon } from "@material-ui/core";
 import { ReactComponent as OhmImg } from "../assets/tokens/token_OHM.svg";
 import { ReactComponent as SOhmImg } from "../assets/tokens/token_sOHM.svg";
 
-import { ohm_usdc } from "./AllBonds";
+import { ohm_dai } from "./AllBonds";
 import { JsonRpcSigner, StaticJsonRpcProvider } from "@ethersproject/providers";
 import { IBaseAsyncThunk } from "src/slices/interfaces";
 
 // NOTE (appleseed): this looks like an outdated method... we now have this data in the graph (used elsewhere in the app)
 export async function getMarketPrice({ networkID, provider }: IBaseAsyncThunk) {
-  const ohm_dai_address = ohm_usdc.getAddressForReserve(networkID);
-  const ohm_decimals = 9;
-  const usdc_decimals = 6;
+  const ohm_dai_address = ohm_dai.getAddressForReserve(networkID);
   const pairContract = new ethers.Contract(ohm_dai_address, PairContract, provider);
   const reserves = await pairContract.getReserves();
   const marketPrice = reserves[0] / reserves[1];
+  console.log('debug getMarketPrice::', marketPrice)
   // const marketPrice = (reserves[0] / Math.pow(10, usdc_decimals)) / (reserves[1] / Math.pow(10, ohm_decimals)) ;
   // const marketPrice = reserves[0] / reserves[1] * Math.pow(10, ohm_decimals - usdc_decimals) ;
 // const marketPrice = reserves[0] / reserves[1] * Math.pow(10, ohm_decimals - usdc_decimals) ;
