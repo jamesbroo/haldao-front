@@ -56,7 +56,17 @@ BondDepository(HAL-DAI)
 0x8be58D3502065532d5b0d21d41f0Cb00935C0593
 
 -------------Config Bond on Mainnet -------------------------
-Bond Price: 1.5, Total Supply: 100k, 
+
+DAI Bond Price: 1.5, Total Supply: 100k, 
+_controlVariable: 100
+_vestingTerm: 35791
+_minimumPrice: 100
+_maxPayout: 1000
+_fee: 100
+_maxDebt: 10000000000000000000
+_initialDebt: 500000000000
+
+LP Bond
 _controlVariable: 100
 _vestingTerm: 35791
 _minimumPrice: 100
