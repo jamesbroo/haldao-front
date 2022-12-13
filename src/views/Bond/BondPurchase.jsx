@@ -151,11 +151,11 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
   let reward;
   let displayName;
   if (bond.isFour) {
-    reward = "sTRP";
+    reward = "sHAL";
     displayName = bond.displayName + " (4, 4)";
     discount += stakingRebasePercentage;
   } else {
-    reward = "TRP";
+    reward = "HAL";
     displayName = bond.displayName;
   }
 
@@ -246,7 +246,7 @@ function BondPurchase({ bond, slippage, recipientAddress }) {
             <Typography>You Will Get</Typography>
             <Typography id="bond-value-id" className="price-data">
               {isSoldOut ? (
-                "0 TRP"
+                "0 HAL"
               ) : (
                 <>{isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.bondQuote, 4) || "0"} ${reward}`}</>
               )}

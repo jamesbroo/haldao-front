@@ -46,10 +46,10 @@ function BondRedeem({ bond }) {
   }, []);
 
   let isFour = false;
-  let reward = "TRP";
+  let reward = "HAL";
   if (bond.isFour) {
     isFour = true;
-    reward = "sTRP";
+    reward = "sHAL";
   }
 
   return (
@@ -94,13 +94,13 @@ function BondRedeem({ bond }) {
           <div className="data-row">
             <Typography>Pending Rewards</Typography>
             <Typography className="price-data">
-              {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.interestDue, 4)} TRP`}
+              {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.interestDue, 4)} HAL`}
             </Typography>
           </div>
           <div className="data-row">
             <Typography>Claimable Rewards</Typography>
             <Typography className="price-data">
-              {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.pendingPayout, 4)} TRP`}
+              {isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.pendingPayout, 4)} HAL`}
             </Typography>
           </div>
           <div className="data-row">

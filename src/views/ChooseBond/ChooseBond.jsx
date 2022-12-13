@@ -67,7 +67,7 @@ function ChooseBond() {
         {/* <Zoom in={true}>
           <Paper className="ohm-card">
             <Box className="card-header">
-              <Typography variant="h5">Get TRP and Auto-Deposit (Bond) (4,4)</Typography>
+              <Typography variant="h5">Get HAL and Auto-Deposit (Bond) (4,4)</Typography>
               <RebaseTimer />
             </Box>
             <Grid container item xs={12} style={{ margin: "10px 0px 20px" }} className="bond-hero">
@@ -94,7 +94,7 @@ function ChooseBond() {
               <Grid item xs={6} className={`ohm-price`}>
                 <Box textAlign={`${isVerySmallScreen ? "right" : "center"}`}>
                   <Typography variant="h5" color="textSecondary">
-                    TRP Price
+                    HAL Price
                   </Typography>
                   <Typography variant="h4">
                     {isAppLoading ? <Skeleton width="100px" /> : formatCurrency(marketPrice, 2)}
@@ -149,7 +149,7 @@ function ChooseBond() {
         <Zoom in={true}>
           <Paper className="ohm-card">
             <Box className="card-header">
-              <Typography variant="h5">Get TRP with Discount (Bond) (1,1)</Typography>
+              <Typography variant="h5">Get HAL with Discount (Bond) (1,1)</Typography>
             </Box>
             <Grid container item xs={12} style={{ margin: "10px 0px 20px" }} className="bond-hero">
               <Grid item xs={6}>
@@ -175,7 +175,7 @@ function ChooseBond() {
               <Grid item xs={6} className={`ohm-price`}>
                 <Box textAlign={`${isVerySmallScreen ? "right" : "center"}`}>
                   <Typography variant="h5" color="textSecondary">
-                    TRP Price
+                    HAL Price
                   </Typography>
                   <Typography variant="h4">
                     {isAppLoading ? <Skeleton width="100px" /> : formatCurrency(marketPrice, 2)}
