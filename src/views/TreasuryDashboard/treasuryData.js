@@ -6,42 +6,34 @@ query {
   protocolMetrics(first: 1000, orderBy: timestamp, orderDirection: desc) {
     id
     timestamp
-    hecCirculatingSupply
-    sHecCirculatingSupply
+    halCirculatingSupply
+    sHalCirculatingSupply
     totalSupply
-    hecPrice
+    halPrice
     marketCap
     totalValueLocked
     treasuryRiskFreeValue
     treasuryMarketValue
+    treasuryInvestments
     nextEpochRebase
-    nextDistributedHec
-    treasuryDaiMarketValue
-    treasuryDaiRiskFreeValue
+    nextDistributedHal
+    treasuryUsdtRiskFreeValue
+    treasuryDAIFreeValue
+    treasuryDAIRiskFreeValue
+    treasuryUsdtMarketValue
+    treasuryStableFreeValue
+    treasuryDAIMarketValue
     treasuryUsdcMarketValue
-    treasuryUsdcRiskFreeValue
-    treasuryWFTMMarketValue
-    treasuryWFTMRiskFreeValue
-    treasuryMIMRiskFreeValue
-    treasuryMIMMarketValue
-    treasuryFRAXRiskFreeValue
-    treasuryFRAXMarketValue
-    treasuryGOHMRiskFreeValue
-    treasuryGOHMMarketValue
-    treasuryBOOMarketValue
-    treasuryBOORiskFreeValue
-    treasuryCRVRiskFreeValue
-    treasuryCRVMarketValue
     currentAPY
     runwayCurrent
-    treasuryHecDaiPOL
+    treasuryHalDaiPOL
   }
 }
 `;
 
 export const rebasesV1DataQuery = `
 query {
-  rebases(where: {contract: "0x9ae7972BA46933B3B20aaE7Acbf6C311847aCA40"}, orderBy: timestamp, first: 1000, orderDirection: desc) {
+  rebases(orderBy: timestamp, first: 1000, orderDirection: desc) {
     percentage
     timestamp
   }
@@ -50,7 +42,7 @@ query {
 
 export const rebasesV2DataQuery = `
 query {
-  rebases(where: {contract: "0xD12930C8deeDafD788F437879cbA1Ad1E3908Cc5"}, orderBy: timestamp, first: 1000, orderDirection: desc) {
+  rebases(where: {contract: "0xa9E6559D6bc9e2AfC633E6558647f077D7970713"}, orderBy: timestamp, first: 1000, orderDirection: desc) {
     percentage
     timestamp
   }

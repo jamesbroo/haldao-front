@@ -74,7 +74,7 @@ function TreasuryDashboard() {
         Object.entries(entry).reduce((obj, [key, value]) => ((obj[key] = parseFloat(value)), obj), {}),
       );
       let staked = r?.data?.protocolMetrics.map(entry => ({
-        staked: (parseFloat(entry.sHecCirculatingSupply) / parseFloat(entry.hecCirculatingSupply)) * 100,
+        staked: (parseFloat(entry.sHalCirculatingSupply) / parseFloat(entry.halCirculatingSupply)) * 100,
         timestamp: entry.timestamp,
       }));
 
@@ -201,7 +201,7 @@ function TreasuryDashboard() {
           </Paper>
         </Box>
 
-        {/* <Zoom in={true}>
+        <Zoom in={true}>
           <Grid container spacing={2} className="data-grid">
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <Paper className="ohm-card ohm-chart-card">
@@ -227,10 +227,9 @@ function TreasuryDashboard() {
                   type="stack"
                   data={data}
                   dataKey={[
-                    "treasuryDaiMarketValue",
-                    "treasuryFraxMarketValue",
-                    "treasuryWETHMarketValue",
-                    "treasuryXsushiMarketValue",
+                    "treasuryDAIMarketValue",
+                    "treasuryDAIFreeValue",
+                    "treasuryUsdcMarketValue",
                   ]}
                   stopColor={[
                     ["#F5AC37", "#EA9276"],
@@ -255,7 +254,7 @@ function TreasuryDashboard() {
                   type="stack"
                   data={data}
                   format="currency"
-                  dataKey={["treasuryDaiRiskFreeValue", "treasuryFraxRiskFreeValue"]}
+                  dataKey={["treasuryDAIRiskFreeValue", "treasuryRiskFreeValue"]}
                   stopColor={[
                     ["#F5AC37", "#EA9276"],
                     ["#768299", "#98B3E9"],
@@ -278,10 +277,10 @@ function TreasuryDashboard() {
                 <Chart
                   type="area"
                   data={data}
-                  dataKey={["treasuryOhmDaiPOL"]}
+                  dataKey={["treasuryHalDaiPOL"]}
                   stopColor={[["rgba(128, 204, 131, 1)", "rgba(128, 204, 131, 0)"]]}
                   headerText="Protocol Owned Liquidity HAL-DAI"
-                  headerSubText={`${data && trim(data[0].treasuryOhmDaiPOL, 2)}% `}
+                  headerSubText={`${data && trim(data[0].treasuryHalDaiPOL, 2)}% `}
                   dataFormat="percent"
                   bulletpointColors={bulletpoints.pol}
                   itemNames={tooltipItems.pol}
@@ -352,7 +351,7 @@ function TreasuryDashboard() {
               </Paper>
             </Grid>
           </Grid>
-        </Zoom> */}
+        </Zoom>
       </Container>
     </div>
   );

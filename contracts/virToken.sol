@@ -709,7 +709,7 @@ contract ERC20 is Context, IERC20, Ownable {
 }
 
 // LiquidToken
-contract VirToken is ERC20('VirTok', '$VT', 18), MinterRole {
+contract VToken is ERC20('VTok', '$VT', 18), MinterRole {
 
     constructor () public {
         mint(msg.sender, 10000000000000000000000);
